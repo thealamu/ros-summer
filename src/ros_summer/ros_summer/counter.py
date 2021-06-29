@@ -1,5 +1,5 @@
 import rclpy
-from rclpy import Node
+from rclpy.node import Node
 
 
 class CountingNode(Node):
@@ -10,7 +10,7 @@ class CountingNode(Node):
         self.create_timer(1.0, self.count_callback)
 
     def count_callback(self):
-        self._logger.info(self._count)
+        self._logger.info(str(self._count))
         self._count += 1
 
 
