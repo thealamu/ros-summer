@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = "ros-summer"
+package_name = "ros_summer"
 
 setup(
     name=package_name,
@@ -18,6 +18,6 @@ setup(
     license="MIT",
     tests_require=["pytest"],
     entry_points={
-        "console_scripts": ["counter = ros-summer.counter:main"],
+        "console_scripts": ["counter = ros_summer.counter:main"],
     },
 )
