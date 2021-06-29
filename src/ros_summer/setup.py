@@ -18,6 +18,9 @@ setup(
     license="MIT",
     tests_require=["pytest"],
     entry_points={
-        "console_scripts": ["counter = ros_summer.counter:main"],
+        "console_scripts": [
+            "counter = ros_summer.counter:main",
+            "summer = ros_summer.summer:main",
+        ],
     },
 )
