@@ -1,0 +1,7 @@
+<launch>
+    <node name="counter" pkg="ros_summer" exec="counter">
+        <param name="start" value="$(env START 1)" />
+        <param name="step" value="$(env STEP 1)" />
+    </node>
+    <node name="summer" pkg="ros_summer" exec="summer" />
+</launch>
