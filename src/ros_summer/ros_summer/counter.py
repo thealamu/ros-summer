@@ -7,9 +7,15 @@ class CountingNode(Node):
     def __init__(self):
         super().__init__("counting_node")
         self._logger = self.get_logger()
-        self._count = 0
+
+        # Init params
+        self.declare_parameter("start", 1)
+        self.declare_parameter("step", 1)
+
         self._publisher = self.create_publisher(Int64, "count", 10)
         self.create_timer(1.0, self.count_callback)
+
+        self._count = self.get_parameter("start").value
 
     def count_callback(self):
         self._logger.info(f"Counter: {self._count}")
@@ -18,7 +24,7 @@ class CountingNode(Node):
         dt.data = self._count
         self._publisher.publish(dt)
 
-        self._count += 1
+        self._count += self.get_parameter("step").value
 
 
 def main():
